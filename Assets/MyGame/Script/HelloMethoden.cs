@@ -3,17 +3,17 @@ using UnityEngine;
 public class HelloMethoden : MonoBehaviour
 {
     // 2) Instanzvariable nutzen
-    int startValue2 = 0;
+    int incrementedByOne = 0;
 
     // 3) Der Wert, der dazugezählt wird, ist bei der Deklaration noch nicht bekannt
     // z.B.: Random oder User Input
-    int startValue3 = 0;
+    int incrementedByX = 0;
 
     // 4) Copy by Value
-    int startValue4 = 10;
+    int decrementedByOne = 10;
 
     // 5) Return
-    int startValue5 = 20;
+    int differenzedValue = 20;
 
     private void Start()
     {
@@ -21,34 +21,34 @@ public class HelloMethoden : MonoBehaviour
         Debug.Log("Hallo Methoden!");
 
         // at 2)
-        Debug.Log("before startValue: " + startValue2);
+        Debug.Log("before startValue: " + incrementedByOne);
         IncrementByOne();
-        Debug.Log("after starValue: " + startValue2);
+        Debug.Log("after starValue: " + incrementedByOne);
 
         // at 3)
-        Debug.Log("before startValue3: " + startValue3);
+        Debug.Log("before startValue3: " + incrementedByX);
         IncrementByX(Random.Range(1,10));
-        Debug.Log("after starValue3: " + startValue3);
+        Debug.Log("after starValue3: " + incrementedByX);
 
         // at 4)
-        Debug.Log("before starValue: " + startValue4);
-        DecrementByOne(startValue4);
-        Debug.Log("after starValue: " + startValue4);
+        Debug.Log("before starValue: " + decrementedByOne);
+        OutputDecrementedByOne(decrementedByOne);
+        Debug.Log("after starValue: " + decrementedByOne);
 
         // at 5)
-        Debug.Log("before starValue: " + startValue5);
-        startValue5 = DecrementByX(startValue5, 2);
-        Debug.Log("after starValue: " + startValue5);
+        Debug.Log("before starValue: " + differenzedValue);
+        differenzedValue = GetDifferenz(differenzedValue, 2);
+        Debug.Log("after starValue: " + differenzedValue);
     }
 
     // 5)
-    int DecrementByX(int start, int valToSub)
+    int GetDifferenz(int start, int valToSub)
     {
         return start - valToSub;
     }
 
     // 4)
-    void DecrementByOne(int val)
+    void OutputDecrementedByOne(int val)
     {
         val--;
         Debug.Log("val: " + val);
@@ -57,12 +57,12 @@ public class HelloMethoden : MonoBehaviour
     // 3)
     void IncrementByX(int valToAdd)
     {
-        startValue3 += valToAdd;
+        incrementedByX += valToAdd;
     }
 
     // 2)
     void IncrementByOne()
     {
-        startValue2++;
+        incrementedByOne++;
     }
 }
